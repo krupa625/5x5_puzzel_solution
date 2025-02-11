@@ -48,7 +48,7 @@ const regionMap = {
 
 function isValid(row, col, stars) {
   for (let [r, c] of stars) {
-    if (r === row || c === col) 
+    if (r === row || c === col) //check row and colum same chhe ke nahi
         return false;
     if (Math.abs(r - row) <= 1 && Math.abs(c - col) <= 1) 
         return false;//ye logic reference lekar kiya hai for check edges 
@@ -57,8 +57,8 @@ function isValid(row, col, stars) {
 }
 
 function placeStars(regionMap) {
-  let stars = [];
-  let placedRegions = new Set();
+  let stars = [];  //star ni position store karva
+  let placedRegions = new Set(); //track karva mate star ni  position
 
   for (let color in regionMap) {
     let positions = regionMap[color];
@@ -67,7 +67,7 @@ function placeStars(regionMap) {
         stars.push([row, col]);
         regions[row][col] = "★";
         placedRegions.add(color);
-        break;
+        break;  ///first loop for star placed after checking conditions
       }
     }
   }
@@ -80,7 +80,7 @@ function placeStars(regionMap) {
           stars.push([row, col]);
           regions[row][col] = "★";
 
-          break;
+          break; // star baki hoy ena mate aa loop 5 star place nai thata etle
         }
       }
     }
@@ -90,7 +90,7 @@ function placeStars(regionMap) {
     if (!placedRegions.has(color)) {
       let [row, col] = regionMap[color][0];
       stars.push([row, col]);
-      regions[row][col] = "★";
+      regions[row][col] = "★";   //ek region ma star place nai hua isliye ye loop to solve
     }
   }
 }
