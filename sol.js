@@ -6,6 +6,7 @@
 
 const regions = Array.from({ length: 5 }, () => Array(5).fill(0));
 
+
 const regionMap = {
   Grey: [
     [1, 1],
@@ -97,3 +98,34 @@ function placeStars(regionMap) {
 
 placeStars(regionMap);
 console.log(regions);
+
+
+//   let stars = [];
+//   function isValid(row, col, stars) {
+//     for (let [r, c] of stars) {
+//         if (r === row || c === col) 
+//           return false; 
+//         if (Math.abs(r - row) <= 1 && Math.abs(c - col) <= 1)
+//            return false; 
+//     }
+//     return true;
+// }
+
+// function placeStars() {
+//     let placed = 0;
+//     for (let row = 0; row < GRID_SIZE; row++) {
+//         for (let col = 0; col < GRID_SIZE; col++) {
+//             if (placed < GRID_SIZE && isValid(row, col, stars)) {
+//                 stars.push([row, col]); 
+//                 regions[row][col] = "*"; 
+//                 placed++;
+//                 break;
+//             }
+//         }
+//     }
+// }
+
+// placeStars();
+// console.log("Regions with stars:");
+// console.log(regions);
+// console.log("Stars placed at:", stars);
