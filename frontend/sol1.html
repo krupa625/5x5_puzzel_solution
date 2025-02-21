@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>⭐ Star Placement with Regions ⭐</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .grid {
+            margin: 20px auto;
+        }
+
+        .cell {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>⭐ Star Placement with Regions ⭐</h1>
+
+    <div id="input-container">
+        <label style="font-weight: bold;" for="grid-size">Enter Grid (1-9):</label>
+        <input style="font-weight: bold; background-color: aquamarine; padding: 1px;" type="number" id="size" min="1"
+            max="9" placeholder="Enter Grid Size">
+        <button class="bt" onclick="generateGrid()">Display Layout</button>
+    </div>
+
+    <div id="container"></div>
+
+    <!-- <div id="message"></div> -->
+
+    <p id="message"></p>
+
+    <div>
+        <button id="btn" onclick="generateNewSolution()">Next Solution</button>
+        <button id="reset" onclick="resetGrid()">Reset Grid</button>
+    </div>
+
+    <div id="instructions">
+        <p><strong>Instructions:</strong> Click on cells to place ⭐. Avoid same row/column. Click a
+            star again to remove it.</p>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>

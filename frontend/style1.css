@@ -1,3 +1,4 @@
+
 body {
     text-align: center;
     font-family: Arial, sans-serif;
@@ -5,23 +6,26 @@ body {
     margin-right: auto;
 }
 
+
 #input-container {
     margin-top: 20px;
 }
 
+
 #container {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 2px;
     padding: 30px;
 }
+
 
 .grid {
     display: grid;
     border: 4px solid #000;
     margin: auto;
     padding: 2px;
-    
 }
+
 
 .cell {
     width: 40px;
@@ -32,33 +36,47 @@ body {
     font-size: 16px;
     line-height: 40px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-#btn {
+
+.cell:hover {
+    background-color: #d3d3d3;
+}
+
+
+.star {
+    color: gold;
+    font-size: 20px;
+}
+
+
+#btn, #reset {
     display: none;
     margin-top: 20px;
     background-color: #78c0e2;
     padding: 6px;
-    text-decoration-style: solid;
     border: 1px solid black;
-    text-decoration-thickness: 0;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.bt{
+.bt {
     margin-left: 10px;
     margin-top: 20px;
     background-color: #a7c7f8;
     padding: 3px;
-    text-decoration-style: solid;
     border: 1px solid black;
-    text-decoration-thickness: 0;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.star {
-    color: gold;
+
+#btn.show, #reset.show {
+    display: inline-block;
 }
+
 
 .region-1 { background-color: #da3479; }
 .region-2 { background-color: #0a8373; }
@@ -69,3 +87,18 @@ body {
 .region-7 { background-color: #fa2630; }
 .region-8 { background-color: #e04c1e; }
 .region-9 { background-color: #53360a; }
+
+#instructions {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+}
