@@ -97,26 +97,44 @@ function displayGrid(regionGrid, stars) {
 
 function handleCellClick(row, col) {
     const messageDiv = document.getElementById("message");
-    messageDiv.innerText = ""; // Clear previous message
+    messageDiv.innerText = "";         //previous msg remove karva mate
+
+    
+    const clickedRegion = regionGrid[row][col];              //clicked region get karva mate
+
 
     if (userStars.some(([sr, sc]) => sr === row && sc === col)) {
-        userStars = userStars.filter(([sr, sc]) => sr !== row || sc !== col); // Remove star
+        userStars = userStars.filter(([sr, sc]) => sr !== row || sc !== col); // star remove karva mate
     } else {
+        // Same region check karva mate
+        const starInSameRegion = userStars.some(
+            ([sr, sc]) => regionGrid[sr][sc] === clickedRegion
+        );
+
+        if (starInSameRegion) {
+            messageDiv.innerText = "❌ Invalid placement!";
+            messageDiv.style.color = "red";
+            return;
+        }
+
         if (isValid(row, col, userStars)) {
             userStars.push([row, col]);
         } else {
             messageDiv.innerText = "❌ Invalid placement!";
             messageDiv.style.color = "red";
-            return; 
+            return;
         }
     }
+    
+    displayGrid(regionGrid, userStars);          //grid ma new star place karva mate
+    // updateSolutionMessage(false);               //msg not display jyare place karo star
 
-    displayGrid(regionGrid, userStars);
-
+    
     if (userStars.length === GRID_SIZE) {
         displaySolutions();
     }
 }
+
 
 function generateGrid() {
     const sizeInput = document.getElementById("size");
