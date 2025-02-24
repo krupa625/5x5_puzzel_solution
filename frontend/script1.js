@@ -27,11 +27,11 @@ function backtrack(row, stars, solutions) {
   }
 }
 
-function createRegionGrid(solution) {
+function createRegionGrid(solutions) {
   const grid = Array.from({ length: GRID_SIZE }, () =>Array(GRID_SIZE).fill(0));
   let regionIds = 1;
 
-  for (let [r, c] of solution) {
+  for (let [r, c] of solutions) {
     grid[r][c] = regionIds++;
   }
 
