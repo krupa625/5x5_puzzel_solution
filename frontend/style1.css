@@ -22,7 +22,7 @@ body {
 .grid {
     display: grid;
     border: 4px solid #000;
-    margin: auto;
+    margin: 20px auto;
     padding: 2px;
 }
 
