@@ -12,7 +12,7 @@ function isValid(row, col, stars) {
   return true;
 }
 
-function backtrack(row, stars, solutions) {
+function backtrack(row = 0, stars, solutions) {
   if (row === GRID_SIZE) {
     solutions.push([...stars]);
     return;
