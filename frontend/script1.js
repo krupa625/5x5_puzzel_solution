@@ -85,8 +85,7 @@ function displayGrid(regionGrid, stars) {
       const regionNum = regionGrid[r][c];
       cell.className = `cell region-${regionNum}`;
       cell.innerText = stars.some(([sr, sc]) => sr === r && sc === c)
-        ? "⭐"
-        : regionNum;
+        ? "⭐" : " ";
 
       cell.addEventListener("click", () => handleCellClick(r, c));
       gridElement.appendChild(cell);
